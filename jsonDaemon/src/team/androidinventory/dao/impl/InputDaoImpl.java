@@ -45,14 +45,14 @@ public class InputDaoImpl implements InputDao {
 		ArrayList<Integer> houseIDs = new ArrayList<Integer>();
 		try {
 			for (int i = 0; i < stockArray.length(); i++) {// 存在性判断
-				JSONObject stockitem = stockArray.getJSONObject(i);
-				String commodityID = stockitem.getString("commodityID");
+				JSONObject stockItem = stockArray.getJSONObject(i);
+				String commodityID = stockItem.getString("commodityID");
 				commodityExist = utils.isCommodityExist(commodityID);
 				if (commodityExist.contains("不存在")) {
 					ce = true;
 					result += commodityExist + "\n";
 				}
-				int houseID = stockitem.getInt("houseID");
+				int houseID = stockItem.getInt("houseID");
 				houseExist = utils.isHouseExist(houseID);
 				if (houseExist.contains("不存在")) {
 					he = true;
@@ -60,13 +60,13 @@ public class InputDaoImpl implements InputDao {
 				} else {
 					houseIDs.add(houseID);
 				}
-				int providerID = stockitem.getInt("providerID");
+				int providerID = stockItem.getInt("providerID");
 				providerExist = utils.isProviderExist(providerID);
 				if (providerExist.contains("不存在")) {
 					pe = true;
 					result += providerExist + "\n";
 				}
-				int time = stockitem.getInt("time");
+				int time = stockItem.getInt("time");
 				if (time <= 0) {
 					te = true;
 					result += commodityID + "存储期限错误 \n";
@@ -165,7 +165,8 @@ public class InputDaoImpl implements InputDao {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("错误所在位置：InputDaoDaoImpl.inputExistenceJudge(JSONArray)");
+			e.printStackTrace();
+			System.out.println("错误所在位置：InputDaoImpl.inputJudge(JSONArray)");
 		}
 		return result;
 	}
@@ -178,7 +179,7 @@ public class InputDaoImpl implements InputDao {
 			inputObject = new JSONObject(storeItemLists);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
-			System.out.println("错误所在位置：InputDaoDaoImpl.parseInputJson(String)");
+			System.out.println("错误所在位置：InputDaoImpl.parseInputJson(String)");
 		}
 		return inputObject;
 	}
@@ -194,7 +195,7 @@ public class InputDaoImpl implements InputDao {
 			rs = ps.executeQuery();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("错误所在位置：InputDaoDaoImpl.getInputID()");
+			System.out.println("错误所在位置：InputDaoImpl.getInputID()");
 		}
 		int inputID = 0;
 		if (rs != null) {
@@ -203,7 +204,7 @@ public class InputDaoImpl implements InputDao {
 				inputID = rs.getInt(1) + 1;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				System.out.println("错误所在位置：InputDaoDaoImpl.getInputID()");
+				System.out.println("错误所在位置：InputDaoImpl.getInputID()");
 			}
 		} else {
 			inputID = OperationUtil.inputStartNumber + 1;
@@ -234,7 +235,7 @@ public class InputDaoImpl implements InputDao {
 				return 1;
 			}
 		} catch (Exception e) {
-			System.out.println("错误所在位置：InputDaoDaoImpl.insertIntoInputList(int,int)");
+			System.out.println("错误所在位置：InputDaoImpl.insertIntoInputList(int,int)");
 		}
 		dbu.CloseResources(ps);
 		// dbu.CloseResources(conn);
@@ -267,7 +268,7 @@ public class InputDaoImpl implements InputDao {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("错误所在位置：InputDaoDaoImpl.insertIntoStockList(...)");
+			System.out.println("错误所在位置：InputDaoImpl.insertIntoStockList(...)");
 		}
 		dbu.CloseResources(ps);
 		// dbu.CloseResources(conn);
@@ -306,7 +307,7 @@ public class InputDaoImpl implements InputDao {
 				System.out.println("入库成功");
 			}
 		} catch (Exception e) {
-			System.out.println("错误所在位置：InputDaoDaoImpl.warseIn(String)");
+			System.out.println("错误所在位置：InputDaoImpl.warseIn(String)");
 		}
 		return "入库失败";
 	}
