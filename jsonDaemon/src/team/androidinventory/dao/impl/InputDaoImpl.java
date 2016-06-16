@@ -58,14 +58,6 @@ public class InputDaoImpl implements InputDao {
 					he = true;
 					result += houseExist + "\n";
 				} else {
-//					int count = 0;
-//					for (int j = 0; j < houseIDs.size(); j++) {
-//						if (houseID == houseIDs.get(j))
-//							count++;
-//					}
-//					if (count == 0) {
-//						houseIDs.add(houseID);
-//					}
 					houseIDs.add(houseID);
 				}
 				int providerID = stockitem.getInt("providerID");
@@ -74,7 +66,6 @@ public class InputDaoImpl implements InputDao {
 					pe = true;
 					result += providerExist + "\n";
 				}
-				// Date time = new java.sql.Date(System.currentTimeMillis());
 				int time = stockitem.getInt("time");
 				if (time <= 0) {
 					te = true;
