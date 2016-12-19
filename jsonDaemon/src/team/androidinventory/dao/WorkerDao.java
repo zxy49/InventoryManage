@@ -55,7 +55,7 @@ public interface WorkerDao {
     public String confirmPosition(StoreItemList item);
     public String alterPosition(StoreItemList item,int newHouse);
     public ArrayList<StoreItemList> getStoreItems(String itemid) ;
-	ArrayList<VarietyEnum> getUnits();
+	ArrayList<VarietyEnum> getUnits02();
 	String addUnit(VarietyEnum varietyEnum);
 	String deleteUnit(String type);
 	String addHouse(String housename, ArrayList<HouseVolume> list);
