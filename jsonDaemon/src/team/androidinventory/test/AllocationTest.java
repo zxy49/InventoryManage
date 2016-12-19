@@ -16,12 +16,13 @@ import team.androidinventory.model.StoreItemList;
 
 public class AllocationTest {
 	static WorkerDaoImpl wo = new WorkerDaoImpl();
+	static WorkerDaoImpl wwo = wo;
 	public static void main(String[] args){
 		
 		JSONObject jo = new JSONObject();
 		JSONArray allocateArray = new JSONArray();
 		try{
-			for(int i = 0;i<1;i++){
+			for(int j = 0;j<1;j++){
 				JSONObject stockitem = new JSONObject();
 				stockitem.put("commodityID",(12345678)+"");
 				stockitem.put("inHouseID",1001);
