@@ -26,7 +26,7 @@ public class InputDaoImpl implements InputDao {
 	private StoreItemDaoImpl sidi = new StoreItemDaoImpl();
 	private ArrayList<StoreItemList> alsil = new ArrayList<StoreItemList>();
 
-	public void closeConnection() {
+	public void closeConnect() {
 		dbu.CloseResources(conn);
 	}
 
