@@ -26,7 +26,7 @@ public class OutputDaoImpl implements OutputDao {
 	private StoreItemDaoImpl sidi = new StoreItemDaoImpl();
 	private ArrayList<StoreItemList> alsil = new ArrayList<StoreItemList>();
 	
-	private static Connection conn;
+	public Connection conn;
 
 	@Override
 	public String outputJudge(JSONArray sellArray) {
