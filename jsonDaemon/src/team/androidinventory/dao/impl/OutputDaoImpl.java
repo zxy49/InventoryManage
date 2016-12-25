@@ -25,6 +25,8 @@ public class OutputDaoImpl implements OutputDao {
 	private VarietyEnumDaoImpl vedi = new VarietyEnumDaoImpl();
 	private StoreItemDaoImpl sidi = new StoreItemDaoImpl();
 	private ArrayList<StoreItemList> alsil = new ArrayList<StoreItemList>();
+	
+	private static Connection conn;
 
 	@Override
 	public String outputJudge(JSONArray sellArray) {

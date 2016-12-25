@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.Properties;
 /**连接以及操作数据库*/
 public class DBUtil {
-	private static Connection conn;
+	
 	/**
 	 * An object that represents a precompiled(预编译的) SQL statement(声明,语句). A SQL statement is
 	 * precompiled and stored in a PreparedStatement object. This object can
