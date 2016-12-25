@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="storeItemList")
-public class StoreItemList implements Serializable{
+public class StoreItemLists implements Serializable{
 	
 	/**
 	 * 
@@ -23,7 +23,7 @@ public class StoreItemList implements Serializable{
 	private int providerID;
 	private int number;
 	
-	public StoreItemList(){
+	public StoreItemLists(){
 		super();
 	}
 
