@@ -27,7 +27,7 @@ public class InputDaoImpl implements InputDao {
 	private ArrayList<StoreItemList> alsil = new ArrayList<StoreItemList>();
 
 	public void closeConnection() {
-		// dbu.CloseResources(conn);
+		dbu.CloseResources(conn);
 	}
 
 	@Override
