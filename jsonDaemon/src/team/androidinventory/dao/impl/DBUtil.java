@@ -42,15 +42,7 @@ public class DBUtil {
 	
 	
 	
-	public static Connection getConnForMySql() {
-		try {
-			Class.forName(driverClass);
-			conn = DriverManager.getConnection(driverUrl, username, password);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return conn;
-	}
+	
 
 	/**从数据库连接里面获取PreparedStatement对象
 	 * @param sql

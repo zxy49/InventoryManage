@@ -30,5 +30,15 @@ public class HouseVolumeTest {
 		ArrayList<HouseVolume> alhv = null;
 		System.out.println(alhv.size());
 	}
+	
+	public static Connection getConn() {
+		try {
+			Class.forName(driverClass);
+			conn = DriverManager.getConnection(driverUrl, username, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
 
 }
