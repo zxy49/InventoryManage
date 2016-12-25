@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import team.androidinventory.model.HouseVolume;
 
 public class HouseVolumeDaoImpl {
+	public Connection conn1;
 	DBUtil dbu = new DBUtil();
 	Connection conn = dbu.getConnForMySql();
 
