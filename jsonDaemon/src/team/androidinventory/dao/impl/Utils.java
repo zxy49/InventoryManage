@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class Utils {
-
+public Connection conn;
 	DBUtil dbu = new DBUtil();
 	Connection conn = dbu.getConnForMySql();
 
