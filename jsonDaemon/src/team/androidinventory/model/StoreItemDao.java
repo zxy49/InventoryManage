@@ -58,30 +58,5 @@ public class StoreItemDaoImpl {
 		//dbu.CloseResources(conn);
 	}
 
-	public StoreItemList getStoreItemList(StoreItemList sil) {
-		// TODO Auto-generated method stub
-	    String commodityID = sil.getCommodityID();
-	    int houseID = sil.getHouseID();
-	    int providerID = sil.getProviderID();
-	    //conn = dbu.getConnForMySql();
-		String sql = "select number from storeitemlist where commodityID='"+commodityID+"'"+" and houseID="+houseID+" and providerID="+providerID;
-		PreparedStatement ps = null;
-		try {
-			ps = conn.prepareStatement(sql);
-			ResultSet r = ps.executeQuery();
-			if (r.next()) {
-				int number = r.getInt(1);
-//				System.out.println("更新成功");
-				sil.setNumber(number);
-				return sil;
-				}
-		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("错误所在位置：StoreItemDaoImpl.getStoreItemList(StoreItemList)");
-		}
-		dbu.CloseResources(ps);
-		//dbu.CloseResources(conn);
-		sil.setNumber(0);
-		return sil;
-	}
+	
 }
