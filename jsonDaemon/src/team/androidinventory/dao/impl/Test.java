@@ -49,36 +49,36 @@ public class Test {
 //		}
 //		System.out.println(wo.commodityAllocation(10000002));
 //        System.out.println(wo.commodityAllocationItem(300000001, "1234567890", 1001, 1002, 70));
-		ArrayList<Integer> list = new ArrayList();
-		int i =10;
-		while(i>0){
-			list.add(1);
-			i--;
-		}
-		i=10;
-		while(i>0){
-			list.add(2);
-			i--;
-		}
-		System.out.println(list.size());
-		list = RemoveSame(list);
-		System.out.println(list.size());
+// 		ArrayList<Integer> list = new ArrayList();
+// 		int i =10;
+// 		while(i>0){
+// 			list.add(1);
+// 			i--;
+// 		}
+// 		i=10;
+// 		while(i>0){
+// 			list.add(2);
+// 			i--;
+// 		}
+// 		System.out.println(list.size());
+// 		list = RemoveSame(list);
+// 		System.out.println(list.size());
 	}
 	
-	private static ArrayList<Integer> RemoveSame(ArrayList<Integer> list)
-    {
-        //上面写的那句是多余的，这个是最终的  
-        for (int i = 0; i < list.size(); i++)
-        {
-            for (int j = i + 1; j < list.size(); j++)
-            {
-                if (list.get(i)==list.get(j))
-                {
-                    list.remove(j);
-                    j--;
-                }
-            }
-        }
-        return list;
-    }
+// 	private static ArrayList<Integer> RemoveSame(ArrayList<Integer> list)
+//     {
+//         //上面写的那句是多余的，这个是最终的  
+//         for (int i = 0; i < list.size(); i++)
+//         {
+//             for (int j = i + 1; j < list.size(); j++)
+//             {
+//                 if (list.get(i)==list.get(j))
+//                 {
+//                     list.remove(j);
+//                     j--;
+//                 }
+//             }
+//         }
+//         return list;
+//     }
 }
